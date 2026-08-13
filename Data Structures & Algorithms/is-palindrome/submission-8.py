@@ -1,0 +1,23 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        p = 0
+        q = len(s)-1
+        while p < q:
+            while not s[p].isalnum():
+                p += 1
+                if p > len(s) - 1:
+                    return True
+            while not s[q].isalnum():
+                q -= 1
+                if q < 0:
+                    return True
+            
+            if s[p].lower() != s[q].lower():
+                return False
+            else:
+                p += 1
+                q -= 1
+
+        return True
+
+        
